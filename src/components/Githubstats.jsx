@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useInView } from "../hooks";
-import styles from "./GitHubStats.module.css";
+import styles from "./Githubstats.module.css";
 
 const USERNAME = "CODEWITH-JAIVY";
 

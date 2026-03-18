@@ -1,0 +1,35 @@
+/* Add this at the END of your existing global.css */
+
+/* ── Light Theme ── */
+[data-theme="light"] {
+  --bg:      #f8f7ff;
+  --bg2:     #f0eeff;
+  --bg3:     #e8e4ff;
+  --card:    #ffffff;
+  --card2:   #f3f0ff;
+  --border:  rgba(139,92,246,.18);
+  --border2: rgba(139,92,246,.35);
+  --glow:    rgba(139,92,246,.25);
+  --text:    #1a1a2e;
+  --muted:   #6b7280;
+  --subtle:  #9ca3af;
+}
+
+[data-theme="light"] body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+[data-theme="light"] body::before {
+  background-image:
+    linear-gradient(rgba(139,92,246,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139,92,246,.05) 1px, transparent 1px);
+}
+
+[data-theme="light"] .nav {
+  background: rgba(248,247,255,.8) !important;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: var(--bg);
+}

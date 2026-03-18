@@ -1,0 +1,248 @@
+.about {}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 96px;
+  align-items: center;
+}
+
+/* Photo side */
+.photoSide {
+  position: relative;
+}
+
+.photoFrame {
+  position: relative;
+  border-radius: 20px;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--violet), var(--cyan), var(--violet));
+  background-size: 200% 200%;
+  animation: shimmer 4s linear infinite;
+}
+
+.photoInner {
+  background: var(--card2);
+  border-radius: 18px;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+}
+
+.photoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  border-radius: 16px;
+}
+
+.photoIcon { font-size: 72px; opacity: .2; }
+
+.photoHint {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--subtle);
+  text-align: center;
+  padding: 0 20px;
+}
+
+.photoPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.frameDeco {
+  position: absolute;
+  inset: -1px;
+  border-radius: 21px;
+  background: linear-gradient(135deg, rgba(139,92,246,.3), transparent 50%);
+  pointer-events: none;
+}
+
+.experienceBadge {
+  position: absolute;
+  bottom: -24px;
+  right: -24px;
+  padding: 18px 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(139,92,246,.15);
+}
+
+.expNum {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--violet);
+  line-height: 1;
+}
+
+.expLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  margin-top: 4px;
+}
+
+.statusBadge {
+  position: absolute;
+  top: 20px;
+  right: -16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(16,185,129,.1);
+  border: 1px solid rgba(16,185,129,.25);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #10b981;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse 2s infinite;
+}
+
+/* Text side */
+.textSide {}
+
+.greeting {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.bio {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 32px 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.infoItem {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.infoItem:nth-child(even) { border-right: none; }
+.infoItem:nth-last-child(-n+2) { border-bottom: none; }
+
+.infoKey {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.infoVal {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(139,92,246,.3);
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.btnOutline:hover {
+  border-color: var(--violet);
+  color: var(--violet);
+  transform: translateY(-3px);
+}
+
+/* Tablet */
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .photoSide {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .photoInner {
+    height: 380px;
+  }
+  .experienceBadge {
+    right: 0;
+    bottom: -20px;
+  }
+  .statusBadge {
+    right: 0;
+    top: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .photoInner {
+    height: 300px;
+  }
+  .infoGrid { grid-template-columns: 1fr; }
+  .infoItem:nth-child(even) { border-right: 1px solid var(--border); }
+  .infoItem:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .infoItem:last-child { border-bottom: none; }
+  .greeting { font-size: 22px; }
+  .ctas { flex-direction: column; }
+  .ctas button,
+  .ctas a { width: 100%; justify-content: center; }
+}
